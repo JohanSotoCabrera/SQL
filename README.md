@@ -1,4 +1,4 @@
-# Johan Soto Example SQL Portafolio
+# Johan Soto SQL Portafolio
 
 ## Welcome to my SQL portfolio! This code repository contains examples of SQL I've written. Feel free to take a look!. 
 
