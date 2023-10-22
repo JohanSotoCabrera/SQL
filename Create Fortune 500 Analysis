@@ -1,4 +1,4 @@
-
+#This project utilizes the follow fortune_companies data: 
 
 CREATE TABLE fortune_companies (
     company_id INTEGER PRIMARY KEY,
