@@ -58,7 +58,7 @@ VALUES
     ('Company JJ', 'Manufacturing', 370.0, 3100, 1, 20, 12, 7.6),
     ('Company KK', 'Healthcare', 150.2, 3400, 0, 16, 8, 5.3);
 
-------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 1.) Ranking companies by their revenue.
 
@@ -73,8 +73,7 @@ FROM fortune_companies
 ORDER BY revenue DESC
 
 
-
-2.) calculating how many employees there are per industry and showing only those with more than 100,000.
+2.) Calculating how many employees there are per industry and showing only those with more than 100,000.
 
 SELECT industry,sum(employees) as total_employees
 FROM fortune_companies
@@ -82,4 +81,13 @@ GROUP by industry
 HAVING total_employees >100000
 ORDER BY total_employees DESC
 
-3.)
+
+3.) Determining the average tenure of employees in each industry and classifying whether they have high or low employee turnover.
+
+SELECT sum(employees) AS Total_employees, industry, avg_employee_tenure, 
+CASE WHEN avg_employee_tenure >= 5 THEN 'Low rotation of employees'
+ELSE 'High rotation of employees'
+END AS 'Avg.Rotation of employees'
+FROM fortune_companies
+GROUP BY industry
+ORDER BY avg_employee_tenure DESC
