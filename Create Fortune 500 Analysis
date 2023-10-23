@@ -91,3 +91,9 @@ END AS 'Avg.Rotation of employees'
 FROM fortune_companies
 GROUP BY industry
 ORDER BY avg_employee_tenure DESC
+
+
+4.) Which is the company with the most benefits for employees?
+
+SELECT company_name,industry, MAX(paid_time_off_days) AS Total_paid_day_off ,MAX(maternity_leave_weeks) AS Total_maternity_leave_weeks,healthcare_benefits
+FROM fortune_companies
