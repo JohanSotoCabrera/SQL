@@ -20,12 +20,28 @@ AND orderid <> 'Order ID';
 
 4.) Which product was the cheapest one sold in January, and what was the price?
 
+SELECT product,MIN(price) AS cheapest_price
+FROM BIT_DB.JanSales;
 
 5.) What is the total revenue for each product sold in January?
 
-
+SELECT product,price*Quantity AS Total_revenue
+FROM BIT_DB.JanSales
+GROUP BY product
+ORDER BY Total_revenue DESC;
 
 6.) Which products were sold in February at 548 Lincoln St, Seattle, WA 98101, how many of each were sold, and what was the total revenue?
 
+SELECT product,Quantity,price*Quantity AS Total_revenue, location
+FROM BIT_DB.FebSales
+WHERE location = '548 Lincoln St, Seattle, WA 98101';
+
 
 7.) How many customers ordered more than 2 products at a time in February, and what was the average amount spent for those customers?
+
+SELECT COUNT(acctnum),avg(Quantity * price) AS AVG_amount_spent
+FROM BIT_DB.customers C
+JOIN BIT_DB.FebSales F
+On C.order_id = F.orderID
+AND order_id <> 'Order ID'
+WHERE F.Quantity > 2;
