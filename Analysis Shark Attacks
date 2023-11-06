@@ -1,0 +1,72 @@
+
+
+1.) How many Shark attacks ocurred in the world until 2017?
+
+SELECT COUNT(Injury)
+FROM Shark_db.Shark_Attack;
+
+2.) How many Fatal shark attacks ocurred in the world until 2017?
+
+SELECT COUNT(Injury)
+FROM Shark_db.Shark_Attack
+WHERE Fatal LIKE '%y%';
+
+3.) How many no Fatal shark attacks ocurred in the world until 2017?
+
+SELECT COUNT(Injury)
+FROM Shark_db.Shark_Attack
+WHERE Fatal LIKE '%N%'
+
+4.) What is the country with more shark attacks?
+
+SELECT COUNT(Injury), Country
+FROM Shark_db.Shark_Attack
+GROUP BY Country
+ORDER BY COUNT(Injury) DESC
+LIMIT 1,
+
+5.) How many of those attacks in USA were fatals?
+
+SELECT COUNT(Injury), Country
+FROM Shark_db.Shark_Attack
+WHERE Country LIKE 'USA' AND FATAL LIKE '%Y%'
+GROUP BY Country
+ORDER BY COUNT(Injury) DESC;
+
+6,) How many Mans were attacked in the USA By sharks?
+
+SELECT COUNT(Injury), Country, Sex
+FROM Shark_db.Shark_Attack
+WHERE Country LIKE 'USA' AND Sex LIKE '%M'
+GROUP BY Country
+ORDER BY COUNT(Injury) DESC;
+
+7.) Average Age of mans who were attacked by sharks in USA?
+
+SELECT Country, Sex, AVG(Age)
+FROM Shark_db.Shark_Attack
+WHERE Country LIKE 'USA' AND Sex LIKE '%M'
+GROUP BY Country
+ORDER BY COUNT(Injury) DESC;
+
+8.) How many attacks ocurred by area in USA?
+
+SELECT COUNT(Injury), Country, Sex, Area
+FROM Shark_db.Shark_Attack
+WHERE Country LIKE 'USA' 
+GROUP BY Area
+ORDER BY COUNT(Injury) DESC;
+
+9.) What is the area with more shark attacks in USA?
+
+SELECT COUNT(Injury), Country, Sex, Area
+FROM Shark_db.Shark_Attack
+WHERE Country LIKE 'USA' 
+GROUP BY Area
+ORDER BY COUNT(Injury) DESC
+LIMIT 1;
+
+
+
+
+
