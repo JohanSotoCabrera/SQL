@@ -15,7 +15,7 @@ WHERE Fatal LIKE '%y%';
 
 SELECT COUNT(Injury)
 FROM Shark_db.Shark_Attack
-WHERE Fatal LIKE '%N%'
+WHERE Fatal LIKE '%N%';
 
 4.) What is the country with more shark attacks?
 
@@ -23,7 +23,7 @@ SELECT COUNT(Injury), Country
 FROM Shark_db.Shark_Attack
 GROUP BY Country
 ORDER BY COUNT(Injury) DESC
-LIMIT 1,
+LIMIT 1;
 
 5.) How many of those attacks in USA were fatals?
 
