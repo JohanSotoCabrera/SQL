@@ -33,7 +33,7 @@ WHERE Country LIKE 'USA' AND FATAL LIKE '%Y%'
 GROUP BY Country
 ORDER BY COUNT(Injury) DESC;
 
-6,) How many Mans were attacked in the USA By sharks?
+6.) How many Mans were attacked in the USA By sharks?
 
 SELECT COUNT(Injury), Country, Sex
 FROM Shark_db.Shark_Attack
