@@ -33,7 +33,7 @@ WHERE Country LIKE 'USA' AND FATAL LIKE '%Y%'
 GROUP BY Country
 ORDER BY COUNT(Injury) DESC;
 
-6.) How many Mans were attacked in the USA By sharks?
+6.) How many Mens were attacked in the USA By sharks?
 
 SELECT COUNT(Injury), Country, Sex
 FROM Shark_db.Shark_Attack
@@ -41,7 +41,7 @@ WHERE Country LIKE 'USA' AND Sex LIKE '%M'
 GROUP BY Country
 ORDER BY COUNT(Injury) DESC;
 
-7.) Average Age of mans who were attacked by sharks in USA?
+7.) Average Age of mens who were attacked by sharks in USA?
 
 SELECT Country, Sex, AVG(Age)
 FROM Shark_db.Shark_Attack
