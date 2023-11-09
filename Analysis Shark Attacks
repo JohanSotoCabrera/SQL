@@ -67,6 +67,18 @@ ORDER BY COUNT(Injury) DESC
 LIMIT 1;
 
 
+------------------------------------------------------------------------------------------
+
+SELECT Country,COUNT(Injury) as Total_World, Area,AVG(Age) as Average_age,Sex,
+CASE WHEN Fatal = 'N' THEN 0
+ELSE 1
+END AS 'Fatal_Attack'
+FROM Shark_db.Shark_Attack
+WHERE Fatal_Attack 
+GROUP BY Country
+ORDER BY Total_World DESC
+
+
 
 
 
