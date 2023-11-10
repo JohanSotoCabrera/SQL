@@ -1,4 +1,5 @@
-In this SQL, I'm querying a database about Shark Attacks in the world. 
+In this SQL, I'm querying a database from Maven Analytics about Shark Attacks in the world, I made some query in SQLite and then 
+exported the result of those queary to tableau to make the dashboard.
 
 1.) How many Shark attacks ocurred in the world until 2017?
 
@@ -67,16 +68,6 @@ ORDER BY COUNT(Injury) DESC
 LIMIT 1;
 
 
-------------------------------------------------------------------------------------------
-
-SELECT Country,COUNT(Injury) as Total_World, Area,AVG(Age) as Average_age,Sex,
-CASE WHEN Fatal = 'N' THEN 0
-ELSE 1
-END AS 'Fatal_Attack'
-FROM Shark_db.Shark_Attack
-WHERE Fatal_Attack 
-GROUP BY Country
-ORDER BY Total_World DESC
 
 
 
